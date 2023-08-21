@@ -1,0 +1,74 @@
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px; 
+    .wordContainer{
+        display: flex;
+        width: 100%;
+        position: relative;
+        align-items: baseline;
+    }
+    .word-italian {
+        font-size: 42px;
+        font-weight: bold;
+        padding-right: 10px;
+    }
+    .word-english {
+        font-size: 20px;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+    }
+    .word-indicativo {
+        position: absolute;
+        right: 0;
+        color: #fff;
+        font-size: 30px;
+        opacity: 0.4;
+        top: -7px;
+    }
+
+    .tenseContainer {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .tense {
+        width: 90px;
+        font-size: 30px;
+        color: #fff;
+        box-shadow: -10px 10px 10px -11px white;
+    }
+    .tenseConjecation {
+        width: calc(100% - 90px);
+        font-size: 30px;
+        border-bottom: 1px solid #ffffff47;
+        input {
+            width: 100%;
+            height: 40px;
+            border: none;
+            background: #ffffff5e;
+            font-size: 25px;
+            font-weight: bold;
+            -webkit-border-radius: 0;
+        }
+    } 
+    #popUp { 
+        display: none;
+        position: absolute;
+        width: 100%;
+        margin-left: -20px;
+        padding: 20px;
+        font-size: 3em;
+        font-weight: bold;
+        text-align: center;
+        background: #69d772;
+        box-shadow: 0 0 50px 12px #535353;
+        border-top: 10px solid white;
+        border-bottom: 10px solid white;
+        z-index: 9;
+    }
+}

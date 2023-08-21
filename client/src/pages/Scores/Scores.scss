@@ -1,0 +1,9 @@
+.scoresContainer {
+    height: 100vh;
+    overflow: scroll;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: #fff;
+}

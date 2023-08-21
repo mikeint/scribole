@@ -1,0 +1,7 @@
+{
+    "name": "scribole",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "react"
+  }

@@ -1,0 +1,70 @@
+.loginContainer {
+	text-align: center;
+}  
+.loginMiddle { 
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+.loginMiddle label {
+	float: left;
+	font-size: 20px;
+}
+
+.loginContent {
+	width: 400px;  
+	padding: 50px 30px; 
+}
+.loginContent img {
+	width: 200px;
+}
+
+
+.loginBtn {
+	width: 100%;
+    background-color: #6d7787;
+    color: white;
+    height: 40px;
+    border: 0px; 
+    font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.tabContainer {
+	display: flex;
+    width: 400px;
+	height: 60px;
+	font-size: 22px;
+}
+.tab-item {
+    width: 50%;
+    height: 100%;
+	opacity: 0.5;
+    cursor: pointer;
+}
+.tab-item.active { 
+	opacity: 1;
+    color: #fff;
+    font-weight: bold;
+	letter-spacing: 5px;  
+	border-top: none;
+	box-shadow: 0px 15px 10px -14px white;
+	opacity: 1;
+}
+
+
+@media only screen and (max-width: 677px) { 
+	.tabContainer {
+		width: 100%;
+	}
+	.loginContent {
+		width: 100%;
+		padding: 0px 30px 50px 30px;
+		border-radius: 0px;
+	}
+}

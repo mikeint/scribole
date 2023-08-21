@@ -1,0 +1,53 @@
+.gamesContainer {
+    overflow-y: scroll;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;   
+    padding-bottom: 75px;
+}
+.game {
+    width: 30%;
+    height: 150px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: self-end;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #000;
+    cursor: pointer;
+    box-shadow: 0 0 10px 4px black;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: 0.3s;
+    a {
+        color: #000;
+    }
+    &:hover {
+        box-shadow: none;
+        opacity: 0.7;
+    }
+}
+
+.game1, .game4, .game7, .game10 {
+    background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 2s ease infinite;
+	-moz-animation: Gradient 2s ease infinite;
+	animation: Gradient 2s ease infinite;
+}
+.game2, .game5, .game8, .game11 { 
+    background-color: #fff; 
+    background-image: url('../../images/game2thumbnail.png');
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    border: 2px solid #000;
+}
+.game3, .game6, .game9, .game12 { 
+    background-color: #c63921;
+    background-image: url('../../images/i4.png');
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+}

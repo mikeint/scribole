@@ -1,0 +1,8 @@
+{
+    "appId": "io.ionic.scribole",
+    "appName": "scribole",
+    "bundledWebRuntime": false,
+    "npmClient": "yarn",
+    "webDir": "build",
+    "cordova": {}
+  }

@@ -1,0 +1,47 @@
+.navBar {
+    display: flex;
+    width: 100%;
+    height: 65px;
+    bottom: 0;
+    background: #2e9fd3;
+    border-top: 1px solid #2e2e2e;
+    box-shadow: 0 0 5px 0px black;
+    z-index: 10;
+    position: absolute;
+    a {
+        position: relative;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1;
+        text-align: center;
+        margin: 8px;
+
+        &.active {
+            &::before {
+                content: '';
+                width: 100%;
+                margin-top: -1px;
+                height: 55px;
+                border: 2px solid #fff;
+                position: absolute;
+                border-radius: 8px;
+            box-shadow: inset 0px 0px 15px 1px #d4d4d4;
+            }
+        }
+    }
+    .navBarIcon {
+        background-image: url(../../images/games.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+    }
+    .navBarIcon2 {background-image: url(../../images/words.png);}
+    .navBarIcon3 {background-image: url(../../images/scores.png);}
+    .navBarIcon4 {background-image: url(../../images/account.png);}
+}
+ 
+@media only screen and (max-width: 1024px) {
+}

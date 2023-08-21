@@ -1,0 +1,92 @@
+[
+    {
+        "word": "Volare",
+        "english": "to fly",
+        "conjugations": [
+            {
+                "io": "volo",
+                "tu": "voli",
+                "luilei": "vola",
+                "noi": "voliamo",
+                "voi": "volate",
+                "loro": "volano"
+            },
+            {
+                "io": "ho volato",
+                "tu": "hai volato",
+                "luilei": "ha volato",
+                "noi": "abbiamo volato",
+                "voi": "avete volato",
+                "loro": "hanno volato"
+            },
+            {
+                "io": "volero",
+                "tu": "volerai",
+                "luilei": "volera",
+                "noi": "voleremo",
+                "voi": "volerete",
+                "loro": "voleranno"
+            }
+        ]
+    },
+    {
+        "word": "Pranzare",
+        "english": "to have lunch",
+        "conjugations": [
+            {
+                "io": "pranzo",
+                "tu": "pranzi",
+                "luilei": "pranza",
+                "noi": "pranziamo",
+                "voi": "pranzate",
+                "loro": "pranzano"
+            },
+            {
+                "io": "ho pranzato",
+                "tu": "hai pranzato",
+                "luilei": "ha pranzato",
+                "noi": "abbiamo pranzato",
+                "voi": "avete pranzato",
+                "loro": "hanno pranzato"
+            },
+            {
+                "io": "pranzero",
+                "tu": "pranzerai",
+                "luilei": "pranzerà",
+                "noi": "pranzeremo",
+                "voi": "pranzerete",
+                "loro": "pranzeranno"
+            }
+        ]
+    },
+    {
+        "word": "Potere",
+        "english": "can",
+        "conjugations": [
+            {
+                "io": "posso",
+                "tu": "puoi",
+                "luilei": "puo",
+                "noi": "possiamo",
+                "voi": "potete",
+                "loro": "possono"
+            },
+            {
+                "io": "ho potuto",
+                "tu": "hai potuto",
+                "luilei": "ha potuto",
+                "noi": "abbiamo potuto",
+                "voi": "avete potuto",
+                "loro": "hanno potuto"
+            },
+            {
+                "io": "potro",
+                "tu": "potrai",
+                "luilei": "potra",
+                "noi": "potremo",
+                "voi": "potrete",
+                "loro": "potranno"
+            }
+        ]
+    }
+]
