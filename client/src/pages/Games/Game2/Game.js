@@ -1,17 +1,17 @@
 import { useState, useRef, useEffect } from 'react';
 import './Game.scss';
-import sound from './correct.mp3';
+import sound from '../../../files/correct.mp3';
 import { useHistory } from "react-router-dom"; 
 import TopBar from '../../../components/TopBar/TopBar';
 
-const Game2 = () => {
+const Game = () => {
     const [selectedItems, setSelectedItems] = useState(() => {
         return JSON.parse(localStorage.getItem("selectedItems")) || []
     });
     console.log(selectedItems)
     const [randomWord, setRandomWord] = useState(selectedItems[Math.floor(Math.random() * selectedItems.length)]);
     const [pageNumber, setPageNumber] = useState(0);
-    const audio = new Audio(sound)
+    const audio = new Audio(sound);
 
     const inputReference = useRef(null);
     useEffect(() => {
@@ -37,7 +37,7 @@ const Game2 = () => {
             /* GAME ENDED */
             if(pageNumber === 1) {
                 setPageNumber(0);
-                localStorage.setItem('gamesPlayed', localStorage.getItem('gamesPlayed') ? (parseInt(localStorage.getItem('gamesPlayed'))+1) : 1);
+                localStorage.setItem('EXP', localStorage.getItem('EXP') ? (parseInt(localStorage.getItem('EXP'))+1) : 1);
                 return history.replace("/games");
             }
             else { 
@@ -91,4 +91,4 @@ const Game2 = () => {
     </>
 )}
 
-export default Game2;
+export default Game;

@@ -31,16 +31,16 @@
         }
     }
     .navBarIcon {
-        background-image: url(../../images/games.png);
+        background-image: url(../../files/images/games.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
         width: 100%;
         height: 100%;
     }
-    .navBarIcon2 {background-image: url(../../images/words.png);}
-    .navBarIcon3 {background-image: url(../../images/scores.png);}
-    .navBarIcon4 {background-image: url(../../images/account.png);}
+    .navBarIcon2 {background-image: url(../../files/images/words.png);}
+    .navBarIcon3 {background-image: url(../../files/images/scores.png);}
+    .navBarIcon4 {background-image: url(../../files/images/account.png);}
 }
  
 @media only screen and (max-width: 1024px) {

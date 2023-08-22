@@ -2,10 +2,10 @@
 import { Link } from 'react-router-dom';
 import './TopBar.scss';
 
-import h1 from '../../images/h1.png';
-import h2 from '../../images/h2.png';
-import h3 from '../../images/h3.png';
-import h4 from '../../images/h4.png';
+import h1 from '../../files/images/h1.png';
+import h2 from '../../files/images/h2.png';
+import h3 from '../../files/images/h3.png';
+import h4 from '../../files/images/h4.png';
 
 const TopBar = () => {
 

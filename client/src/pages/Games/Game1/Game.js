@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Game.scss';
 import words from './words.json';
-import sound from './correct.mp3';
+import sound from '../../../files/correct.mp3';
 import TopBar from '../../../components/TopBar/TopBar';
 
 const Game = (props) => {

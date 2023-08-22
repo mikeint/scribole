@@ -1,28 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import './Scores.scss';  
+import React from 'react';
+import './Scores.scss';
 import NavBar from '../../components/NavBar/NavBar';
 import TopBar from '../../components/TopBar/TopBar';
 
 const Scores = () => {
-    const [gamesPlayed, setGamesPlayed] = useState(() => {
-        return JSON.parse(localStorage.getItem('gamesPlayed')) || [];
-    });
+    const level = 5;
+    const currentExperience = localStorage.getItem('EXP');
+    const maxExperience = level*level*level;
+    const experiencePercentage = (currentExperience / maxExperience) * 100;
 
-    useEffect(() => {
-        localStorage.setItem('gamesPlayed', JSON.stringify(gamesPlayed));
-    }, []);
-
-    console.log(gamesPlayed)
-
-    return ( 
+    return (
         <>
             <TopBar />
             <NavBar />
-            <div className='scoresContainer'>
-                You played Game2: {gamesPlayed} times
+            <div className='expBar'>
+                <div className='expProgressBar'>
+                    <div
+                        className='expProgress'
+                        style={{ width: `${experiencePercentage}%` }}
+                    />
+                </div>
+                Experience: {currentExperience}/{maxExperience}
             </div>
         </>
-    )
-} 
+    );
+};
 
 export default Scores;

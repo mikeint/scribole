@@ -13,7 +13,8 @@ const Games = () => {
             <div className="gamesContainer">
                 <Link to="/game1" className="game game1">bad game</Link>
                 <Link to="/game2" className="game game2"></Link>
-                <Link to="/game3" className="game game3">Game 3</Link>
+                <Link to="/game3" className="game game3"></Link>
+                <Link to="/game4" className="game game4"></Link>
             </div>
         </>
     );

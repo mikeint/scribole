@@ -7,6 +7,7 @@ import Games from './pages/Games/Games';
 import Game1 from './pages/Games/Game1/Game';
 import Game2 from './pages/Games/Game2/Game';
 import Game3 from './pages/Games/Game3/Game';
+import Game4 from './pages/Games/Game4/Game';
 import WordGroups from './pages/WordGroups/WordGroups';
 import Scores from './pages/Scores/Scores';
 import Account from './pages/Account/Account';
@@ -36,6 +37,7 @@ const App = () => {
             <Route exact path="/game1" component={Game1} />
             <Route exact path="/game2" component={Game2} />
             <Route exact path="/game3" component={Game3} />
+            <Route exact path="/game4" component={Game4} />
 
             {/* <PrivateRoute exact path="/games" component={Games} user={user} token={token}/>
             <PrivateRoute exact path="/scores" component={Scores} user={user} token={token}/>

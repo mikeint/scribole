@@ -1,0 +1,61 @@
+/* Game.scss */
+.gameContainer {
+    /* Center the content vertically and horizontally */
+    display: flex;
+    height: 100vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-gap: 10px; /* Gap between buttons */
+}
+
+.wordButtonsContainer {
+    /* Styles for each button container */
+    text-align: center; /* Center the button text */
+}
+
+/* Styling for the buttons */
+.wordButtonsContainer button {
+    background-color: #f0f0f0;
+    border: none;
+    width: 200px;
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.wordButtonsContainer button:hover {
+    background-color: #a4a4a4;
+}
+
+.wordButtonsContainer button.activeButton {
+    background-color: rgb(113, 236, 113); /* Highlighted background color */
+    /* Additional styles for highlighting */
+}
+
+.wordButtonsContainer button.mismatchedButton {
+    background-color: rgb(247, 67, 67); /* Light red background */
+}
+
+
+
+.clickedWordBox {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 128, 0, 0.8); /* Bright green background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.clickedWordText {
+    color: white; /* White text */
+    font-size: 24px; /* Large font size */
+    font-weight: bold;
+}

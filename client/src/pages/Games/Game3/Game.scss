@@ -1,0 +1,17 @@
+.wordContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    align-items: center;     
+}
+
+.guessInput {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: #ffffff5e;
+    font-size: 25px;
+    font-weight: bold;
+    -webkit-border-radius: 0;
+}
