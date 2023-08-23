@@ -1,117 +1,140 @@
 import React, { useState, useEffect } from 'react';
 import './Game.scss';
-import { useHistory } from 'react-router-dom';
+import sound from './correct.mp3';
 import TopBar from '../../../components/TopBar/TopBar';
-
-// Simple array shuffle
-const shuffleArray = (array) => {
-    return array.slice().sort(() => Math.random() - 0.5);
-};
 
 const Game = () => {
     const [selectedItems, setSelectedItems] = useState(() => {
         return JSON.parse(localStorage.getItem('selectedItems')) || [];
     });
 
-    const [clickedButtons, setClickedButtons] = useState([]); // Track clicked buttons
-    const [uniqueWords, setUniqueWords] = useState([]); // State for unique words
-    const [clickedWord, setClickedWord] = useState(""); // New state variable for clicked word
-    const [lastClickedId, setLastClickedId] = useState(null); // Track the ID of the last clicked button
-    const [mismatched, setMismatched] = useState(false);
+    const [clickedWord, setClickedWord] = useState(null);
+    const [buttonClicked, setButtonClicked] = useState(false);
+    const [prevClickedItem, setPrevClickedItem] = useState(null);
+    const [pairMatched, setPairMatched] = useState(false);
+    const [pairNotMatched, setPairNotMatched] = useState(false);
+    const [numOfMatchedPairs, setNumOfMatchedPairs] = useState(0);
+    const [resetWords, setResetWords] = useState(0);
+    const [matchedPairs, setMatchedPairs] = useState([]);
 
-    const history = useHistory();
+    const handleButtonClick = (item) => {
+        if (clickedWord === item || matchedPairs.includes(item.idNum)) {
+            return; //Do nothing if the same button is clicked twice
+        }
+
+        if (prevClickedItem && prevClickedItem.idNum === item.idNum) {
+            setPairMatched(true);
+            const audio = new Audio(sound);
+            audio.play();
+
+            // Update the matched pairs
+            setMatchedPairs((prevPairs) => [...prevPairs, item.idNum]);
+        } else if (prevClickedItem && prevClickedItem.idNum !== item.idNum) {
+            setPairNotMatched(true);
+        }
+
+        setClickedWord(item);
+        setButtonClicked(true);
+        setPrevClickedItem(item);
+    };
 
     useEffect(() => {
-
-        // Shuffle the selectedItems array
-        const shuffledItems = shuffleArray(selectedItems);
-
-        const extractedWords = shuffledItems.slice(0, 5).flatMap((word) => [
-            { idNum: word.idNum, text: word.english },
-            { idNum: word.idNum, text: word.italian },
-        ]);
-        const uniqueWords = Array.from(new Set(extractedWords));
-        setUniqueWords(shuffleArray(uniqueWords)); // Shuffle only once when component mounts
-    }, [selectedItems]);
-
-    const handleButtonClick = (word) => {
-        if (clickedButtons.length === 0) {
-            // No button clicked previously, set the clicked button and text
-            setClickedButtons([word]);
-            // Update the clickedWord state with the text of the clicked word
-            setClickedWord(word.text);
-            // Set the last clicked ID
-            setLastClickedId(word.idNum);
-        } 
-        else if (clickedButtons.length !== 0 && clickedButtons[0].text !== word.text) {
-            // One button clicked previously and it's not the same as the current clicked button
-            if (clickedButtons[0].idNum === word.idNum) {
-                // Matched ID, shuffle the array
-                setUniqueWords(shuffleArray(uniqueWords));
-                setClickedButtons([]);
-                shuffleArray(selectedItems);
-                
-            } 
-            else {
-                // Mismatched text, update clicked buttons and set mismatched state
-                setClickedButtons([
-                    clickedButtons,
-                    { word, text: word.text },
-                ]);
-                setMismatched(true);
-                setTimeout(() => {
-                    setClickedButtons([]);
-                    setMismatched(false); // Reset mismatched state
-                }, 250);
-            }
-            // Set the last clicked ID
-            setLastClickedId(word.idNum);
+        if (pairMatched) {
+            setTimeout(() => {
+                setPrevClickedItem(null);
+                setButtonClicked(false);
+                setPairMatched(false);
+                setClickedWord(null);
+                setNumOfMatchedPairs((prevNum) => prevNum + 1);
+                if (numOfMatchedPairs === 4) {
+                    setResetWords((prevReset) => prevReset + 1);
+                    setNumOfMatchedPairs(0);
+                    setMatchedPairs([])
+                }
+            }, 250); // 0.25 seconds delay
+        } else if (pairNotMatched) {
+            setTimeout(() => {
+                setPrevClickedItem(null);
+                setButtonClicked(false);
+                setPairNotMatched(false);
+                setClickedWord(null);
+            }, 250); // 0.25 seconds delay
         }
+    }, [pairMatched, pairNotMatched, numOfMatchedPairs]);
+
+    const [selectedShuffledItems, setSelectedShuffledItems] = useState([]);
+    const [shuffledItemsRight, setShuffledItemsRight] = useState([]);
+
+    useEffect(() => {
+        const shuffledItems = shuffleArray(selectedItems);
+        const selectedShuffled = shuffledItems.slice(0, 5);
+        const shuffledRight = shuffleArray(selectedShuffled);
+
+        const removeEnglishFromShuffledRight = () => {
+            const updatedShuffledRight = shuffledRight.map(item => {
+                const { english, ...rest } = item;
+                return rest;
+            });
+            setShuffledItemsRight(updatedShuffledRight);
+        };
+
+        setSelectedShuffledItems(selectedShuffled);
+        setShuffledItemsRight(shuffledRight);
+        removeEnglishFromShuffledRight();
+
+    }, [resetWords]);
+
+    const shuffleArray = (array) => {
+        return array.slice().sort(() => Math.random() - 0.5);
     };
-    
 
     return (
-        <div>
-            {/* Display the TopBar component at the very top of the page */}
+        <>
             <TopBar />
-    
-            <div className='gameContainer'>
+            <div className="game3Container">
+                
+                {clickedWord && (
+                    <div className="clickedWordBox">
+                        <p className="clickedWordText">{clickedWord.english || clickedWord.italian}</p>
+                    </div>
+                )}
                 <div className="grid">
-                    {uniqueWords.map((word, index) => (
-                        <div key={index} className="wordButtonsContainer">
+                    <div className="wordButtonsContainer">
+                        {selectedShuffledItems.map((item, index) => (
                             <button
-                                className={
-                                    clickedButtons.some(
-                                        (clickedButton) =>
-                                            clickedButton.text === word.text
-                                    )
-                                        ? mismatched
-                                            ? 'mismatchedButton'
-                                            : 'activeButton'
-                                        : ''
+                                key={index}
+                                className={`button 
+                                    ${item === clickedWord && buttonClicked ? 'activeButton' : ''} 
+                                    ${item === clickedWord && pairNotMatched ? 'notMatchedButton' : ''}
+                                    ${item === clickedWord && pairMatched ? 'matchedButton' : ''}
+                                    ${matchedPairs.includes(item.idNum) ? 'disabledButton' : ''}`
                                 }
-                                onClick={() => handleButtonClick(word)}
+                                onClick={() => handleButtonClick(item)}
                             >
-                                {word.text}
+                                {item.english}
                             </button>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Display the clicked word in the text box */}
-                <div className="clickedWordBox">
-                    {clickedWord && (
-                        <div className="clickedWordText">
-                            {clickedWord}
-                        </div>
-                    )}
+                        ))}
+                    </div>
+                    <div className="wordButtonsContainer">
+                        {shuffledItemsRight.map((item, index) => (
+                            <button
+                                key={index}
+                                className={`button 
+                                    ${item === clickedWord && buttonClicked ? 'activeButton' : ''}
+                                    ${item === clickedWord && pairNotMatched ? 'notMatchedButton' : ''} 
+                                    ${item === clickedWord && pairMatched ? 'matchedButton' : ''}
+                                    ${matchedPairs.includes(item.idNum) ? 'disabledButton' : ''}`
+                                }
+                                onClick={() => handleButtonClick(item)}
+                            >
+                                {item.italian}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
-
-
+        </>
     );
-    
-                    };
+};
 
 export default Game;

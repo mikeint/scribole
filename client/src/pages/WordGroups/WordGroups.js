@@ -47,6 +47,7 @@ const WordGroups = () => {
             const groupItems = wordGroupsJson
                 .find((groupData) => groupData[group])
                 [group].map((itemData) => ({
+                    idNum: itemData.idNum,
                     italian: itemData.italian,
                     english: itemData.english,
                     category: group,
