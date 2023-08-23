@@ -401,6 +401,58 @@
                 "english": "twenty"
             }
         ]
+    },
+    {
+        "Food": [
+            {
+                "idNum": 15001,
+                "italian": "mela",
+                "english": "apple",
+                "image": "apple.png"
+            },
+            {
+                "idNum": 15002,
+                "italian": "limone",
+                "english": "lemon",
+                "image": "lemon.png"
+            },
+            {
+                "idNum": 15003,
+                "italian": "arance",
+                "english": "orange",
+                "image": "orange.png"
+            },
+            {
+                "idNum": 15004,
+                "italian": "anguria",
+                "english": "watermelon",
+                "image": "watermelon.png"
+            },
+            {
+                "idNum": 15005,
+                "italian": "uve",
+                "english": "grapes",
+                "image": "grapes.png"
+            },
+            {
+                "idNum": 15006,
+                "italian": "pera",
+                "english": "pear",
+                "image": "pear.png"
+            },
+            {
+                "idNum": 15007,
+                "italian": "prugna",
+                "english": "plum",
+                "image": "plum.png"
+            },
+            {
+                "idNum": 15008,
+                "italian": "pomodoro",
+                "english": "tomato",
+                "image": "tomato.png"
+            }
+        ]
     }
     
 ]
