@@ -1,0 +1,458 @@
+[
+    {
+        "Basic": [
+            {
+                "idNum": 10000,
+                "italian": "ciao",
+                "english": "hello"
+            },
+            {
+                "idNum": 10001,
+                "italian": "arrivederci",
+                "english": "goodbye"
+            },
+            {
+                "idNum": 10002,
+                "italian": "ciao",
+                "english": "hello"
+            },
+            {
+                "idNum": 10003,
+                "italian": "sì",
+                "english": "yes"
+            },
+            {
+                "idNum": 10004,
+                "italian": "no",
+                "english": "no"
+            },
+            {
+                "idNum": 10005,
+                "italian": "per favore",
+                "english": "please"
+            },
+            {
+                "idNum": 10006,
+                "italian": "grazie",
+                "english": "thank you"
+            },
+            {
+                "idNum": 10007,
+                "italian": "mi dispiace",
+                "english": "sorry"
+            },
+            {
+                "idNum": 10008,
+                "italian": "scusami",
+                "english": "excuse me"
+            },
+            {
+                "idNum": 10009,
+                "italian": "come stai?",
+                "english": "how are you?"
+            },
+            {
+                "idNum": 10010,
+                "italian": "cosa",
+                "english": "what"
+            },
+            {
+                "idNum": 10011,
+                "italian": "dove",
+                "english": "where"
+            },
+            {
+                "idNum": 10012,
+                "italian": "quando",
+                "english": "when"
+            },
+            {
+                "idNum": 10013,
+                "italian": "chi",
+                "english": "who"
+            },
+            {
+                "idNum": 10014,
+                "italian": "perché",
+                "english": "why"
+            },
+            {
+                "idNum": 10015,
+                "italian": "io",
+                "english": "I"
+            },
+            {
+                "idNum": 10016,
+                "italian": "tu",
+                "english": "you"
+            },
+            {
+                "idNum": 10017,
+                "italian": "lui/lei",
+                "english": "he/she/it"
+            },
+            {
+                "idNum": 10018,
+                "italian": "noi",
+                "english": "we"
+            },
+            {
+                "idNum": 10019,
+                "italian": "loro",
+                "english": "they"
+            },
+            {
+                "idNum": 10020,
+                "italian": "rosso",
+                "english": "red"
+            },
+            {
+                "idNum": 10021,
+                "italian": "blu",
+                "english": "blue"
+            },
+            {
+                "idNum": 10022,
+                "italian": "verde",
+                "english": "green"
+            },
+            {
+                "idNum": 10023,
+                "italian": "giallo",
+                "english": "yellow"
+            },
+            {
+                "idNum": 10024,
+                "italian": "arancione",
+                "english": "orange"
+            },
+            {
+                "idNum": 10025,
+                "italian": "nero",
+                "english": "black"
+            },
+            {
+                "idNum": 10026,
+                "italian": "bianco",
+                "english": "white"
+            },
+            {
+                "idNum": 10027,
+                "italian": "grande",
+                "english": "big"
+            },
+            {
+                "idNum": 10028,
+                "italian": "piccolo",
+                "english": "small"
+            },
+            {
+                "idNum": 10029,
+                "italian": "caldo",
+                "english": "hot"
+            },
+            {
+                "idNum": 10030,
+                "italian": "freddo",
+                "english": "cold"
+            },
+            {
+                "idNum": 10031,
+                "italian": "buono",
+                "english": "good"
+            },
+            {
+                "idNum": 10032,
+                "italian": "cattivo",
+                "english": "bad"
+            },
+            {
+                "idNum": 10033,
+                "italian": "felice",
+                "english": "happy"
+            },
+            {
+                "idNum": 10034,
+                "italian": "triste",
+                "english": "sad"
+            },
+            {
+                "idNum": 10035,
+                "italian": "divertente",
+                "english": "funny"
+            },
+            {
+                "idNum": 10036,
+                "italian": "serio",
+                "english": "serious"
+            },
+            {
+                "idNum": 10037,
+                "italian": "nuovo",
+                "english": "new"
+            },
+            {
+                "idNum": 10038,
+                "italian": "vecchio",
+                "english": "old"
+            },
+            {
+                "idNum": 10039,
+                "italian": "bello",
+                "english": "beautiful"
+            },
+            {
+                "idNum": 10040,
+                "italian": "brutto",
+                "english": "ugly"
+            }
+        ]
+        
+
+
+    },
+    {
+        "Action": [
+            {
+                "idNum": 11000,
+                "italian":"beveno",
+                "english":"to drink"
+            },
+            {
+                "idNum": 11001,
+                "italian":"parlare",
+                "english":"to speak"
+            },
+            {
+                "idNum": 11002,
+                "italian":"essere",
+                "english":"to be"
+            },
+            {
+                "idNum": 11003,
+                "italian":"volere",
+                "english":"to want"
+            },
+            {
+                "idNum": 11004,
+                "italian":"dire",
+                "english":"to tell"
+            },
+            {
+                "idNum": 11005,
+                "italian":"guardare",
+                "english":"to look"
+            },
+            {
+                "idNum": 11006,
+                "italian":"pratica",
+                "english":"to practice"
+            },
+            {
+                "idNum": 11007,
+                "italian":"Imparare",
+                "english":"to learn"
+            }
+        ]
+    },
+    {
+        "Summer": [
+            {
+                "idNum": 12000,
+                "italian":"un'ombrellone",
+                "english":"beach umbrella"
+            },
+            {
+                "idNum": 12001,
+                "italian":"il mare",
+                "english":"the sea"
+            },
+            {
+                "idNum": 12002,
+                "italian":"il sole",
+                "english":"the sun"
+            }
+        ]
+    },
+    {
+        "Computer": [
+            {
+                "idNum": 13000,
+                "italian":"schermo",
+                "english":"monitor"
+            },
+            {
+                "idNum": 13001,
+                "italian":"tastiera",
+                "english":"keyboard"
+            },
+            {
+                "idNum": 13002,
+                "italian":"stampante",
+                "english":"printer"
+            },
+            {
+                "idNum": 13003,
+                "italian":"casse",
+                "english":"speakers"
+            }
+        ]
+    },
+    {
+        "Numbers": [
+            {
+                "idNum": 14001,
+                "italian": "uno",
+                "english": "one"
+            },
+            {
+                "idNum": 14002,
+                "italian": "due",
+                "english": "two"
+            },
+            {
+                "idNum": 14003,
+                "italian": "tre",
+                "english": "three"
+            },
+            {
+                "idNum": 14004,
+                "italian": "quattro",
+                "english": "four"
+            },
+            {
+                "idNum": 14005,
+                "italian": "cinque",
+                "english": "five"
+            },
+            {
+                "idNum": 14006,
+                "italian": "sei",
+                "english": "six"
+            },
+            {
+                "idNum": 14007,
+                "italian": "sette",
+                "english": "seven"
+            },
+            {
+                "idNum": 14008,
+                "italian": "otto",
+                "english": "eight"
+            },
+            {
+                "idNum": 14009,
+                "italian": "nove",
+                "english": "nine"
+            },
+            {
+                "idNum": 14010,
+                "italian": "dieci",
+                "english": "ten"
+            },
+            {
+                "idNum": 14011,
+                "italian": "undici",
+                "english": "eleven"
+            },
+            {
+                "idNum": 14012,
+                "italian": "dodici",
+                "english": "twelve"
+            },
+            {
+                "idNum": 14013,
+                "italian": "tredici",
+                "english": "thirteen"
+            },
+            {
+                "idNum": 14014,
+                "italian": "quattordici",
+                "english": "fourteen"
+            },
+            {
+                "idNum": 14015,
+                "italian": "quindici",
+                "english": "fifteen"
+            },
+            {
+                "idNum": 14016,
+                "italian": "sedici",
+                "english": "sixteen"
+            },
+            {
+                "idNum": 14017,
+                "italian": "diciasette",
+                "english": "seventeen"
+            },
+            {
+                "idNum": 14018,
+                "italian": "diciotto",
+                "english": "eighteen"
+            },
+            {
+                "idNum": 14019,
+                "italian": "diciannove",
+                "english": "nineteen"
+            },
+            {
+                "idNum": 14020,
+                "italian": "venti",
+                "english": "twenty"
+            }
+        ]
+    },
+    {
+        "Food": [
+            {
+                "idNum": 15001,
+                "italian": "mela",
+                "english": "apple",
+                "image": "apple.png"
+            },
+            {
+                "idNum": 15002,
+                "italian": "limone",
+                "english": "lemon",
+                "image": "lemon.png"
+            },
+            {
+                "idNum": 15003,
+                "italian": "arance",
+                "english": "orange",
+                "image": "orange.png"
+            },
+            {
+                "idNum": 15004,
+                "italian": "anguria",
+                "english": "watermelon",
+                "image": "watermelon.png"
+            },
+            {
+                "idNum": 15005,
+                "italian": "uve",
+                "english": "grapes",
+                "image": "grapes.png"
+            },
+            {
+                "idNum": 15006,
+                "italian": "pera",
+                "english": "pear",
+                "image": "pear.png"
+            },
+            {
+                "idNum": 15007,
+                "italian": "prugna",
+                "english": "plum",
+                "image": "plum.png"
+            },
+            {
+                "idNum": 15008,
+                "italian": "pomodoro",
+                "english": "tomato",
+                "image": "tomato.png"
+            }
+        ]
+    }
+    
+]
