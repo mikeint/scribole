@@ -51,6 +51,7 @@ const WordGroups = () => {
                     italian: itemData.italian,
                     english: itemData.english,
                     category: group,
+                    image: itemData.image,
                 }));
 
             if (selectedGroups.includes(group)) {

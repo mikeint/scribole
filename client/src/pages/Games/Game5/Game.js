@@ -13,7 +13,6 @@ const Game = () => {
     const [shuffledItems, setShuffledItems] = useState(selectedItems);
     const [correctButton, setCorrectButton] = useState(false);
     const [gameImage, setGameImage] = useState("");
-    const [expEarned, setExpEarned] = useState(0);
     const [answer1, setAnswer1] = useState(0)
     const [answer2, setAnswer2] = useState(0)
     const [answer3, setAnswer3] = useState(0)
@@ -28,8 +27,12 @@ const Game = () => {
         setAnswer2(answerNum[1])
         setAnswer3(answerNum[2])
 
-        // Reset correctButton when selectedWord changes
-        setCorrectButton(false);
+        //Exp Earned
+        if (correctButton)
+            localStorage.setItem('EXP', localStorage.getItem('EXP') ? (parseInt(localStorage.getItem('EXP'))+1) : 1);
+            // Reset correctButton when selectedWord changes
+            setCorrectButton(false);
+        
 
         const matchingImage = imageFileNames.find(image => image.fileName === shuffledArray[0].image);
         if (matchingImage) {

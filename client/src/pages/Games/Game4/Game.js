@@ -45,6 +45,7 @@ const Game = () => {
                 setButtonClicked(false);
                 setPairMatched(false);
                 setClickedWord(null);
+                localStorage.setItem('EXP', localStorage.getItem('EXP') ? (parseInt(localStorage.getItem('EXP'))+10) : 1);
                 setNumOfMatchedPairs((prevNum) => prevNum + 1);
                 if (numOfMatchedPairs === 4) {
                     setResetWords((prevReset) => prevReset + 1);
