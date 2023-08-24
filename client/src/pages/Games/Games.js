@@ -16,6 +16,7 @@ const Games = () => {
                 <Link to="/game3" className="game game3"></Link>
                 <Link to="/game4" className="game game4"></Link>
                 <Link to="/game5" className="game game5"></Link>
+                <Link to="/game6" className="game game6"></Link>
             </div>
         </>
     );
