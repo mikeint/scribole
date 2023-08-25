@@ -30,4 +30,8 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
+    &.disabled {
+        opacity: 0.5; /* Example: Reduce opacity for disabled buttons */
+        pointer-events: none; /* Disable clicking on disabled buttons */
+    }
 }

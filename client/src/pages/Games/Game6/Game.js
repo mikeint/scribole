@@ -8,7 +8,7 @@ const Game = () => {
         <>
             <TopBar />
             <div className='game6Container'>
-              new game here
+              new game
             </div>
         </>
     );

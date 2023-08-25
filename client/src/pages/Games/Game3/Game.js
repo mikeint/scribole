@@ -37,7 +37,7 @@ const Game = () => {
             /* GAME ENDED */
             if(pageNumber === 1) {
                 setPageNumber(0);
-                localStorage.setItem('EXP', localStorage.getItem('EXP') ? (parseInt(localStorage.getItem('EXP'))+1) : 1);
+                localStorage.setItem('EXP', localStorage.getItem('EXP') ? (parseInt(localStorage.getItem('EXP'))+3) : 5);
                 return history.replace("/games");
             }
             else { 

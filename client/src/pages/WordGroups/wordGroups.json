@@ -453,6 +453,115 @@
                 "image": "tomato.png"
             }
         ]
+    },
+    {
+        "Phrases": [
+            {
+                "idNum": 20001,
+                "italian": "buongiorno",
+                "english": "good morning"
+            },
+            {
+                "idNum": 20002,
+                "italian": "buonanotte",
+                "english": "good night"
+            },
+            {
+                "idNum": 20003,
+                "italian": "come ti chiami",
+                "english": "what is your name?"
+            },
+            {
+                "idNum": 20004,
+                "italian": "qual e il tuo numero",
+                "english": "what is your number?"
+            },
+            {
+                "idNum": 20005,
+                "italian": "mi chiamo",
+                "english": "my name is"
+            },
+            {
+                "idNum": 20006,
+                "italian": "piacere di conoscerti",
+                "english": "nice to meet you"
+            },
+            {
+                "idNum": 20007,
+                "italian": "come stai",
+                "english": "how are you"
+            },
+            {
+                "idNum": 20008,
+                "italian": "sto bene",
+                "english": "I am good"
+            },
+            {
+                "idNum": 20009,
+                "italian": "sono felice",
+                "english": "I am happy"
+            },
+            {
+                "idNum": 20010,
+                "italian": "sono triste",
+                "english": "I am sad"
+            },
+            {
+                "idNum": 20011,
+                "italian": "mi sono persa",
+                "english": "I am lost"
+            },
+            {
+                "idNum": 20012,
+                "italian": "sono stanca",
+                "english": "I am tired"
+            },
+            {
+                "idNum": 20012,
+                "italian": "sono stanca",
+                "english": "I am tired"
+            },
+            {
+                "idNum": 20013,
+                "italian": "Ho fame",
+                "english": "I am hungry"
+            },
+            {
+                "idNum": 20014,
+                "italian": "Ho sete",
+                "english": "I am thirsty"
+            },
+            {
+                "idNum": 20015,
+                "italian": "Ho freddo",
+                "english": "I am cold"
+            },
+            {
+                "idNum": 20016,
+                "italian": "Ho caldo",
+                "english": "I am hot"
+            },
+            {
+                "idNum": 20017,
+                "italian": "sono preoccupata",
+                "english": "I am worried"
+            },
+            {
+                "idNum": 20018,
+                "italian": "sono malata",
+                "english": "I am sick"
+            },
+            {
+                "idNum": 20019,
+                "italian": "sono entusiasta",
+                "english": "I am excited"
+            },
+            {
+                "idNum": 20020,
+                "italian": "sono nervosa",
+                "english": "I am nervous"
+            }
+        ]
     }
     
 ]
