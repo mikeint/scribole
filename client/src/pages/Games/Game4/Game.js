@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Game.scss';
 import sound from './correct.mp3';
+import wrong from '../../../files/failure.mp3'
 import TopBar from '../../../components/TopBar/TopBar';
 
 const Game = () => {
@@ -24,8 +25,7 @@ const Game = () => {
 
         if (prevClickedItem && prevClickedItem.idNum === item.idNum) {
             setPairMatched(true);
-            const audio = new Audio(sound);
-            audio.play();
+            
 
             // Update the matched pairs
             setMatchedPairs((prevPairs) => [...prevPairs, item.idNum]);
@@ -41,25 +41,30 @@ const Game = () => {
     useEffect(() => {
         if (pairMatched) {
             setTimeout(() => {
+                const audio = new Audio(sound);
+                audio.play();
                 setPrevClickedItem(null);
                 setButtonClicked(false);
                 setPairMatched(false);
                 setClickedWord(null);
-                localStorage.setItem('EXP', localStorage.getItem('EXP') ? (parseInt(localStorage.getItem('EXP'))+10) : 1);
+                localStorage.setItem('EXP', parseInt(localStorage.getItem('EXP'))+1);
                 setNumOfMatchedPairs((prevNum) => prevNum + 1);
                 if (numOfMatchedPairs === 4) {
                     setResetWords((prevReset) => prevReset + 1);
                     setNumOfMatchedPairs(0);
                     setMatchedPairs([])
+                    localStorage.setItem('EXP', parseInt(localStorage.getItem('EXP'))+6);
                 }
-            }, 250); // 0.25 seconds delay
+            }, 50); // 0.05 seconds delay
         } else if (pairNotMatched) {
             setTimeout(() => {
+                const audio2 = new Audio(wrong);
+                audio2.play();
                 setPrevClickedItem(null);
                 setButtonClicked(false);
                 setPairNotMatched(false);
                 setClickedWord(null);
-            }, 250); // 0.25 seconds delay
+            }, 50); // 0.05 seconds delay
         }
     }, [pairMatched, pairNotMatched, numOfMatchedPairs]);
 
