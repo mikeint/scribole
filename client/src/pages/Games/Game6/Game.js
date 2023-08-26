@@ -35,7 +35,7 @@ const Game = () => {
         setAnswer3(answerNum[2])
 
         const randomSelectedWord = shuffledArray[0];
-        const soundNameWithoutExtension = randomSelectedWord.sound.replace('.mp3', '');
+        const soundNameWithoutExtension = randomSelectedWord.sound?.replace('.mp3', '');
 
         setSelectedWord(randomSelectedWord);
 
