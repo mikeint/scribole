@@ -1,2 +1,41 @@
 .game6Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Adjust this if needed */
+
+    .playButton {
+        border: none;
+        background: none;
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+        cursor: pointer;
+      }
+
+    .buttonContainer {
+        display: flex;
+        flex-direction: column; /* Display buttons vertically */
+        align-items: center; /* Center buttons horizontally */
+        width: 100%;
+    }
+    
+    .gameButton {
+        width: 220px;
+        margin: 10px 0; /* Add some spacing between buttons */
+        padding: 20px 40px;
+        background-color: #036105;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        &.disabled {
+            opacity: 0.5; /* Example: Reduce opacity for disabled buttons */
+            pointer-events: none; /* Disable clicking on disabled buttons */
+        }
+    }
 }
+
+
+  
