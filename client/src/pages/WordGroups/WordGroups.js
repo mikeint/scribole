@@ -74,7 +74,7 @@ const WordGroups = () => {
 
             return (
                 <div key={i} className="accordionContainer">
-                    <label htmlFor={'item-' + i} className="toggle">
+                    <label htmlFor={'item-' + i} className="wordGroupToggle">
                         <input
                             type="checkbox"
                             checked={selectedGroups.includes(groupName)}
@@ -83,7 +83,7 @@ const WordGroups = () => {
                         {groupName}
                     </label>
                     <input type="checkbox" name="one" id={'item-' + i} className="hide-input checkBox" />
-                    <div className="toggle-el">
+                    <div className="wordGroupToggle-el">
                         {items.map((item, j) => (
                             <div key={j} className="wordGroup">
                                 <label>

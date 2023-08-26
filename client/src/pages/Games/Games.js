@@ -11,12 +11,37 @@ const Games = () => {
             <TopBar />
             <NavBar />
             <div className="gamesContainer">
-                <Link to="/game1" className="game game1">bad game</Link>
-                <Link to="/game2" className="game game2"></Link>
-                <Link to="/game3" className="game game3"></Link>
-                <Link to="/game4" className="game game4"></Link>
-                <Link to="/game5" className="game game5"></Link>
-                <Link to="/game6" className="game game6"></Link>
+
+                <Link to="/game1" className="game game1">
+                    <div class="playGameText">
+                       PLAY
+                    </div>
+                </Link>
+                <Link to="/game2" className="game game2">
+                    <div class="playGameText">
+                       PLAY
+                    </div>
+                </Link>
+                <Link to="/game3" className="game game3">
+                    <div class="playGameText">
+                       PLAY
+                    </div>
+                </Link>
+                <Link to="/game4" className="game game4">
+                    <div class="playGameText">
+                       PLAY
+                    </div>
+                </Link>
+                <Link to="/game5" className="game game5">
+                    <div class="playGameText">
+                       PLAY
+                    </div>
+                </Link>
+                <Link to="/game6" className="game game6">
+                    <div class="playGameText">
+                       PLAY
+                    </div>
+                </Link>
             </div>
         </>
     );

@@ -30,15 +30,17 @@ const Scores = () => {
         <>
             <TopBar />
             <NavBar />
-            <div className='expBar'>
-                LvL: {playerLevel}
-                <div className='expProgressBar'>
-                    <div
-                        className='expProgress'
-                        style={{ width: `${expPercentage}%` }}
-                    />
+            <div className='expPageContainer'>
+                <div className='expBar'>
+                    LvL: {playerLevel}
+                    <div className='expProgressBar'>
+                        <div
+                            className='expProgress'
+                            style={{ width: `${expPercentage}%` }}
+                        />
+                    </div>
+                    Experience: {currentExp}/{maxExp}
                 </div>
-                Experience: {currentExp}/{maxExp}
             </div>
         </>
     );
