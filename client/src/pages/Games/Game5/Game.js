@@ -2,7 +2,7 @@ import './Game.scss';
 import TopBar from '../../../components/TopBar/TopBar';
 import React, { useState, useEffect } from 'react';
 import imageFileNames from './imageImporter';
-import sound from './correct.mp3';
+import sound from '../../../files/correct.mp3';
 import wrong1 from '../../../files/failure.mp3';
 
 const Game = () => {

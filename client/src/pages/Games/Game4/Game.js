@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Game.scss';
-import sound from './correct.mp3';
+import sound from '../../../files/correct.mp3';
 import wrong from '../../../files/failure.mp3'
 import TopBar from '../../../components/TopBar/TopBar';
 

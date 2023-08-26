@@ -3,26 +3,38 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh; /* Adjust this if needed */
+    height: 80vh;
 
     .playButton {
-        border: none;
-        background: none;
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
+        background-color: #a2df59;
+        border-radius: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 15px;
+        color: #fff;
+        box-shadow: -1px 2px 5px 1px #000;
+        border: 2px solid #a57474;
+        text-shadow: -2px 1px #a57474;
+        margin-bottom: 20px;
+        transition: 0.3s;
         cursor: pointer;
+        &:hover {
+            text-shadow: -2px 1px #a57474;
+            background-color: #79a443;
+            box-shadow: none;
+        }
       }
 
     .buttonContainer {
         display: flex;
-        flex-direction: column; /* Display buttons vertically */
-        align-items: center; /* Center buttons horizontally */
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
     
     .gameButton {
         width: 220px;
-        margin: 10px 0; /* Add some spacing between buttons */
+        margin: 10px 0;
         padding: 20px 40px;
         background-color: #036105;
         color: #fff;
@@ -31,8 +43,8 @@
         cursor: pointer;
         font-size: 20px;
         &.disabled {
-            opacity: 0.5; /* Example: Reduce opacity for disabled buttons */
-            pointer-events: none; /* Disable clicking on disabled buttons */
+            opacity: 0.5;
+            pointer-events: none;
         }
     }
 }

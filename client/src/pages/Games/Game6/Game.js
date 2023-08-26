@@ -1,8 +1,7 @@
 import './Game.scss';
 import TopBar from '../../../components/TopBar/TopBar';
-import React, { useState, useEffect } from 'react';
-import playButton from './playButton.png';
-import correctSound from './correct.mp3'
+import React, { useState, useEffect } from 'react'; 
+import correctSound from '../../../files/correct.mp3'
 import wrong1 from '../../../files/failure.mp3';
 
 const importAll = (context) => {
@@ -94,9 +93,7 @@ const Game = () => {
           <div className='game6Container'>
             {selectedWord && sound && (
               <>
-                <button className="playButton" onClick={playSound}>
-                  <img src={playButton} alt="Play Button" />
-                </button>
+                <button className="playButton" onClick={playSound}>PLAY</button>
                 <button
                     className={`gameButton ${correctButton ? 'correct' : ''} ${buttonIndex === answer1 ? 'disabled' : ''}`}
                     onClick={() => handleButtonClick(shuffledItems[answer1].sound, answer1)}
