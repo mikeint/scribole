@@ -1,8 +1,10 @@
 .game5Container {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
-    height: 50%;
+    height: 100vh;
+    background-color:#06002a;
 }
 
 .imageContainer {

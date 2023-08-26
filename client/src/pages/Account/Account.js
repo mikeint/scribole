@@ -20,12 +20,14 @@ const Account = (props) => {
     return (
         <>
             <TopBar />
-            <NavBar /> 
-            {/* <div className="userInfo">Looking good, {props.user.name}</div>
-            <div className="userInfo">{props.user.email}</div> */}
-            <div className='userInfo'>Your user info will show up here once logged in</div>
+            <NavBar />
+            <div className='accountContainer'>
+                {/* <div className="userInfo">Looking good, {props.user.name}</div>
+                <div className="userInfo">{props.user.email}</div> */}
+                <div className='userInfo'>Your user info will show up here once logged in</div>
 
-            <a className="logoutBtn" href='/login' target='' onClick={handleLogout}>Log Out</a>
+                <a className="logoutBtn" href='/login' target='' onClick={handleLogout}>Log Out</a>
+            </div>
         </>
     )
 }

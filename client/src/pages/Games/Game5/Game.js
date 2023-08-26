@@ -82,31 +82,31 @@ const Game = () => {
                 <div className='imageContainer'>
                     <img src={gameImage.url} alt="Game Image" />
                 </div>
-            </div>
-            <div className="buttonContainer">
-                <button
-                    className={`gameButton ${correctButton ? 'correct' : ''} ${buttonIndex === answer1 ? 'disabled' : ''}`}
-                    onClick={() => handleButtonClick(shuffledItems[answer1].image, answer1)}
-                    disabled={wrongButtonClicked && buttonIndex !== answer1}
-                >
-                    {shuffledItems[answer1].italian}
-                </button>
-                <button
-                    className={`gameButton ${correctButton ? 'correct' : ''} ${buttonIndex === answer2 ? 'disabled' : ''}`}
-                    onClick={() => handleButtonClick(shuffledItems[answer2].image, answer2)}
-                    disabled={wrongButtonClicked && buttonIndex !== answer2}
-                >
-                    {shuffledItems[answer2].italian}
-                </button>
-                <button
-                    className={`gameButton ${correctButton ? 'correct' : ''} ${buttonIndex === answer3 ? 'disabled' : ''}`}
-                    onClick={() => handleButtonClick(shuffledItems[answer3].image, answer3)}
-                    disabled={wrongButtonClicked && buttonIndex !== answer3}
-                >
-                    {shuffledItems[answer3].italian}
-                </button>
+                <div className="buttonContainer">
+                    <button
+                        className={`gameButton ${correctButton ? 'correct' : ''} ${buttonIndex === answer1 ? 'disabled' : ''}`}
+                        onClick={() => handleButtonClick(shuffledItems[answer1].image, answer1)}
+                        disabled={wrongButtonClicked && buttonIndex !== answer1}
+                    >
+                        {shuffledItems[answer1].italian}
+                    </button>
+                    <button
+                        className={`gameButton ${correctButton ? 'correct' : ''} ${buttonIndex === answer2 ? 'disabled' : ''}`}
+                        onClick={() => handleButtonClick(shuffledItems[answer2].image, answer2)}
+                        disabled={wrongButtonClicked && buttonIndex !== answer2}
+                    >
+                        {shuffledItems[answer2].italian}
+                    </button>
+                    <button
+                        className={`gameButton ${correctButton ? 'correct' : ''} ${buttonIndex === answer3 ? 'disabled' : ''}`}
+                        onClick={() => handleButtonClick(shuffledItems[answer3].image, answer3)}
+                        disabled={wrongButtonClicked && buttonIndex !== answer3}
+                    >
+                        {shuffledItems[answer3].italian}
+                    </button>
 
 
+                </div>
             </div>
         </>
     );
