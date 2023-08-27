@@ -7,7 +7,6 @@ const TopBar = () => {
     return (
         <div className="topBar">
             <Link to='/games' className='logo'></Link>
-            <div className='eggGif'></div>
         </div>
     );
 };

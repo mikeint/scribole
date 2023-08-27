@@ -2,12 +2,13 @@
     height: calc(100vh - 100px);
     overflow-y: scroll;
     padding: 1em;
-    background-image: url(../../files/images/bg_barn2.png);
-	background-repeat: no-repeat;
-	background-size: cover; 
+    background-color: #638595;
     background-position: -250px;
     height: 100vh;
 
+}
+.accordionContainer:last-child {
+    margin-bottom: 60px;
 }
 .wordGroup {
     height: 0px;

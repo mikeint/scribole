@@ -1,14 +1,12 @@
 .gamesContainer {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     overflow-y: scroll;
-    background-image: url(../../files/images/bg_dessert.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: -100px;
+    background-color: #638595;
     height: 100vh;
 }
 .game {    
+    flex: 1 0 calc(100% - 40px);
     height: 120px;
     border-radius: 10px;
     box-shadow: 0 0 2px 1px black;
@@ -47,45 +45,21 @@
 }
 
 .game1 { 
-    background-color: #8b62b1; 
-    background-image: url('../../files/images/i6.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left;
+    background-color: #8b62b1;
 }
 .game2 { 
-    background-color: #e0c3fc; 
-    background-image: url('../../files/images/i1.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left;
+    background-color: #e0c3fc;
 }
 .game3 {
     background-color: #8b91ed;
-    background-image: url('../../files/images/i2.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left;
 }
 .game4 {
     background-color: #8ec5fc;
-    background-image: url('../../files/images/i3.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left;
 }
 .game5 {
     background-color: #8efcb8;
-    background-image: url('../../files/images/i4.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left;
 }
 .game6 {
     background-color: #fc8e8e;
-    background-image: url('../../files/images/i5.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left;
 }
   
