@@ -6,6 +6,13 @@
     background-position: -250px;
     height: 100vh;
 
+    input {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        margin-right: 5px;
+        accent-color: #000;
+    }
 }
 .accordionContainer:last-child {
     margin-bottom: 60px;
@@ -56,14 +63,7 @@ input.hide-input {
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 3px;
-    box-shadow: 0px 5px 5px 0px black;
+    margin-bottom: 5px;
+    box-shadow: 0px 3px 5px 0px black;
 }
 
-input {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    margin-right: 5px;
-    accent-color: #000;
-}

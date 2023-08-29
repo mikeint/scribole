@@ -9,6 +9,7 @@ const LoginForm = () => {
     const [user, setUser] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(false);
  
     const Auth = new AuthFunctions(); 
 
@@ -16,7 +17,7 @@ const LoginForm = () => {
     const sePwState = (e)=> setPassword(e.target.value)
 
     const login = () => {
-        axios.post('http://localhost:5000/api/users/login', {
+        axios.post('https://hrwgt9xpfh.execute-api.ca-central-1.amazonaws.com/dev/api/users/login', {
             email: email,
             password: password
         })
@@ -29,6 +30,7 @@ const LoginForm = () => {
                 setUser(res.data.user)
             })
         }).catch((error) => {
+            setError(true);
             console.log(error.config);
         });
     };
@@ -36,18 +38,19 @@ const LoginForm = () => {
  
     if (user) {
         if(Auth.loggedIn())
-            return <Redirect to='/games' user={Auth.getUser()} />
+            return <Redirect to='/introduction' user={Auth.getUser()} />
     }
     
     return (
         <>
             <h1 className="">Sign In</h1>
-            <div className="formItem"> 
-                <input className="formControl" placeholder="email" name='email' type='text' onChange={setEmailState} value={email} required />
+            <div className="loginInput"> 
+                <input placeholder="email" name='email' type='text' onChange={setEmailState} value={email} required />
             </div>
-            <div className="formItem"> 
-                <input className="formControl" placeholder="password" name='password' type='password' onChange={sePwState} value={password} required />
-            </div>  
+            <div className="loginInput"> 
+                <input placeholder="password" name='password' type='password' onChange={sePwState} value={password} required />
+            </div>
+            {error ? <div className='loginError'>Your email or password is incorrect.</div>:''}
             <input onClick={login} type="submit" value="Login" className="loginBtn" />
 		</> 
     );

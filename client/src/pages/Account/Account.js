@@ -22,10 +22,8 @@ const Account = (props) => {
             <TopBar />
             <NavBar />
             <div className='accountContainer'>
-                {/* <div className="userInfo">Looking good, {props.user.name}</div>
-                <div className="userInfo">{props.user.email}</div> */}
-                <div className='userInfo'>Your user info will show up here once logged in</div>
-
+                <div className="userInfo">Looking good, {props.user.name}</div>
+                <div className="userInfo">{props.user.email}</div> 
                 <a className="logoutBtn" href='/login' target='' onClick={handleLogout}>Log Out</a>
             </div>
         </>

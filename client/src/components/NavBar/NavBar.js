@@ -8,9 +8,7 @@ const NavBar = () => {
     const [url, setUrl] = useState(null);
     useEffect(() => {
       setUrl(location.pathname);
-    }, [location]);
-
-    console.log(url)
+    }, [location]); 
 
     return (
         <div className="navBar">

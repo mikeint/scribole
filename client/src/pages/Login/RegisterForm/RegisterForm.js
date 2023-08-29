@@ -37,9 +37,9 @@ class RegisterForm extends Component {
 	
 	console.log(newUser)
 	
-	 axios.post('http://localhost:5000/api/users/register', newUser)
+	 axios.post('https://hrwgt9xpfh.execute-api.ca-central-1.amazonaws.com/api/users/register', newUser)
 	 .then((res)=>{
-		axios.post('http://localhost:5000/api/users/login', {
+		axios.post('https://hrwgt9xpfh.execute-api.ca-central-1.amazonaws.com/api/users/login', {
             email: res.data.email,
             password: this.state.password
         }).then((res)=>{
@@ -92,16 +92,16 @@ class RegisterForm extends Component {
 			<h1>Sign Up</h1> 
 			{/* <form onSubmit={this.register}> */}
 
-				<div className="formItem"> 
+				<div className="loginInput"> 
 					<input type="text" className="formControl" placeholder="username" name="name" value={name} onChange={this.onChange} required />
 				</div>
-				<div className="formItem"> 
+				<div className="loginInput"> 
 					<input type="email" className="formControl" placeholder="email" name="email" value={email} onChange={this.onChange} required />
 				</div>
-				<div className="formItem">
+				<div className="loginInput">
 					<input type="password" placeholder="password" name="password" value={password} onChange={this.onChange} required />
 				</div>
-				<div className="formItem">
+				<div className="loginInput">
 					<input type="password" placeholder="confirm password" name="password2" value={password2} onChange={this.onChange} required />
 				</div>
 				<div className="errorsList">
@@ -117,7 +117,7 @@ class RegisterForm extends Component {
 					}
 				</div>
  
-				<input onClick={this.register} type="submit" className="loginBtn" />
+				<input onClick={this.register} type="submit" className="loginBtn" value="Register" />
 			{/* </form> */}
 		</div> 
     );
