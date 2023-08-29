@@ -97,7 +97,7 @@ router.post('/register', (req, res) => {
                     .save()
                     .then(user => res.json(user))
                     .catch(err => console.log(err));
-                    console.log("**********USER ADDED")
+                    console.log("**********USER ADDED: ", newUser)
                 });
             });
         }

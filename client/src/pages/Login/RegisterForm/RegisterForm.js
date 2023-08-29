@@ -6,64 +6,61 @@ import { Redirect } from 'react-router-dom';
 import './RegisterForm.scss';
 
 class RegisterForm extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: '',
-      email: '',
-      password: '',
-	  password2: '', 
-	  errorList: '',
-	  user: '',
-	};
-	this.Auth = new AuthFunctions();
-    this.onChange = this.onChange.bind(this);
-    this.register = this.register.bind(this);
-  }
+  	constructor() {
+		super();
+		this.state = {
+			name: '',
+			email: '',
+			password: '',
+			password2: '', 
+			errorList: '',
+			user: '',
+		};
+		this.Auth = new AuthFunctions();
+		this.onChange = this.onChange.bind(this);
+		this.register = this.register.bind(this);
+	}
 
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+	onChange(e) {
+		this.setState({ [e.target.name]: e.target.value });
+	}
 
-  register(e) {
-    e.preventDefault();
+	register(e) {
+		e.preventDefault();
 
-    const newUser = {
-		name: this.state.name,
-		email: this.state.email,
-		password: this.state.password,
-		password2: this.state.password2
-	};
-	
-	console.log(newUser)
-	
-	 axios.post('https://hrwgt9xpfh.execute-api.ca-central-1.amazonaws.com/api/users/register', newUser)
-	 .then((res)=>{
-		axios.post('https://hrwgt9xpfh.execute-api.ca-central-1.amazonaws.com/api/users/login', {
-            email: res.data.email,
-            password: this.state.password
-        }).then((res)=>{
-			this.Auth.clearToken();
-            let token = res.data.token.replace(/Bearer/g, '').trim();
+		const newUser = {
+			name: this.state.name,
+			email: this.state.email,
+			password: this.state.password,
+			password2: this.state.password2
+		};
+		console.log(newUser)
 
-            this.Auth.setToken(token, ()=>{
-                this.setState({
-                    token: token
-                })
-            });
-            this.Auth.setUser(res.data.user, ()=> {
-                this.setState({
-                    user: res.data.user
-                })
-			});
+		axios.post('https://ir3me5vi29.execute-api.ca-central-1.amazonaws.com/api/users/register', newUser)
+		.then((res)=>{
+			axios.post('https://ir3me5vi29.execute-api.ca-central-1.amazonaws.com/api/users/login', {
+				email: res.data.email,
+				password: this.state.password
+			}).then((res)=>{
+				this.Auth.clearToken();
+				let token = res.data.token.replace(/Bearer/g, '').trim();
+
+				this.Auth.setToken(token, ()=>{
+					this.setState({
+						token: token
+					})
+				});
+				this.Auth.setUser(res.data.user, ()=> {
+					this.setState({
+						user: res.data.user
+					})
+				});
+			})
 		})
-
-	})
-		
-	.catch(errors => 
-		this.showErrors(errors)
-	);  
-  }
+		.catch(errors => 
+			this.showErrors(errors)
+		);  
+	}
 
   showErrors = (errors) => {
  
@@ -83,7 +80,7 @@ class RegisterForm extends Component {
 
 	if(this.Auth.loggedIn()){
         if (this.state.user)
-            return <Redirect to='/games' user={this.Auth.getUser()}/>
+            return <Redirect to='/introduction' user={this.Auth.getUser()}/>
 	} 
 	
     return (

@@ -17,7 +17,7 @@ const LoginForm = () => {
     const sePwState = (e)=> setPassword(e.target.value)
 
     const login = () => {
-        axios.post('https://hrwgt9xpfh.execute-api.ca-central-1.amazonaws.com/dev/api/users/login', {
+        axios.post('https://ir3me5vi29.execute-api.ca-central-1.amazonaws.com/api/users/login', {
             email: email,
             password: password
         })

@@ -1,4 +1,4 @@
-## In client directory, run:
+## In /client directory, run:
 
 #### `yarn install`
 #### `yarn start`
@@ -15,7 +15,7 @@ Launches the test runner in the interactive watch mode.\
 Builds the app for production to the `build` folder.\
 
 
-## In Server directory, run:
+## In /server directory, run:
 
 #### `yarn install`
 #### `yarn start`
