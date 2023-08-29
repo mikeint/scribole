@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
@@ -28,26 +27,26 @@ router.post('/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    User.findOne({
-        email: req.body.email
-    }).then(user => {
-        if (!user) {
+    User.scan({ email: {eq: req.body.email} })
+    .exec()
+    .then(result => {
+        if (result.count === 0) {
             errors.email = 'Email not registered';
             console.log('Email not registered');
             return res.status(400).json(errors);
         } else {
-
+            const user = result[0];
             bcrypt.compare(password, user.password).then(isMatch => {
                 if(isMatch) {
                     //create jwt payload
                     const payload = {
                         id: user.id,
                         name: user.name,
-                        avatar: user.avatar
                     }
                     
-                    //make JWT token (sign token) (payload obj, secretKey, expires obj) 
-                    jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+                    // make JWT token (sign token) (payload obj, secretKey, expires obj) 
+                    // set token to expire in 1 month (2419200)
+                    jwt.sign(payload, keys.secretOrKey, { expiresIn: 2419200 }, (err, token) => {
                         res.json({
                             success: true, 
                             token: 'Bearer ' + token,
@@ -76,21 +75,17 @@ router.post('/register', (req, res) => {
         return res.status(400).json(errors);
     }
 
-    User.findOne({ email: req.body.email }).then(user => {
-        if (user) {  
+    User.scan({ email: {eq: req.body.email} })
+    .exec()
+    .then(result => {
+        if (result.count != 0) { 
             console.log('Email already exists');
             errors.email = 'Email already exists';
             return res.status(400).json(errors);
         } else {
-            const avatar = gravatar.url(req.body.email, {
-                s: '200', // Size
-                r: 'pg', // Rating
-                d: 'mm' // Default
-            });
             const newUser = new User({
                 name: req.body.name,
                 email: req.body.email,
-                avatar,
                 password: req.body.password
             });
             

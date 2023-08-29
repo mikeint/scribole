@@ -1,0 +1,31 @@
+service: scribole-api
+
+custom:
+  serverless-offline:
+    httpPort: 5000
+    lambdaPort: 4001
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ca-central-1
+  iam:
+    role: arn:aws:iam::661425917788:role/lambda_dynamo_access_user
+
+functions:
+  server:
+    handler: ./lambda.handler
+    memorySize: 128
+    timeout: 29
+    events:
+      - http:
+          method: ANY
+          path: /
+          cors: true
+      - http:
+          method: ANY
+          path: '{proxy+}'
+          cors: true
