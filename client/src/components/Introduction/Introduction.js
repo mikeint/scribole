@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Introduction.scss';
-import Punk from '../../components/Punk/Punk'; 
+import Punk from '../Punk/Punk'; 
 
 const Introduction = (props) => {
     const [introPosition, setIntroPosition] = useState(1);
