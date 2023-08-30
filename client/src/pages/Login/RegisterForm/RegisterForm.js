@@ -80,7 +80,7 @@ class RegisterForm extends Component {
 
 	if(this.Auth.loggedIn()){
         if (this.state.user)
-            return <Redirect to='/introduction' user={this.Auth.getUser()}/>
+            return <Redirect to='/games' user={this.Auth.getUser()}/>
 	} 
 	
     return (

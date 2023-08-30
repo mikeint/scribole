@@ -11,7 +11,6 @@ import Game4 from './pages/Games/Game4/Game';
 import Game5 from './pages/Games/Game5/Game';
 import Game6 from './pages/Games/Game6/Game';
 import WordGroups from './pages/WordGroups/WordGroups';
-import Introduction from './pages/Introduction/Introduction';
 import Scores from './pages/Scores/Scores';
 import Account from './pages/Account/Account';
 import PrivateRoute from './PrivateRoute';
@@ -32,8 +31,7 @@ const App = () => {
             <Route exact path="/" render={ () => (<Login />) } />
             <Route exact path='/login' render={ () => (<Login />) } />
 
-            {/* <Route exact path="/introduction" component={Introduction} />
-            <Route exact path="/games" component={Games} />
+            {/* <Route exact path="/games" component={Games} />
             <Route exact path="/wordGroups" component={WordGroups} />
             <Route exact path="/scores" component={Scores} />
             <Route exact path="/account" component={Account} />
@@ -45,7 +43,6 @@ const App = () => {
             <Route exact path="/game5" component={Game5} />
             <Route exact path="/game6" component={Game6} /> */}
 
-            <PrivateRoute exact path="/introduction" component={Introduction} user={user} token={token}/>
             <PrivateRoute exact path="/games" component={Games} user={user} token={token}/>
             <PrivateRoute exact path="/wordGroups" component={WordGroups} user={user} token={token}/>
             <PrivateRoute exact path="/scores" component={Scores} user={user} token={token}/>

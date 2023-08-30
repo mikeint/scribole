@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Introduction.scss';
 import Punk from '../../components/Punk/Punk'; 
-import { Redirect } from 'react-router-dom';
 
-const Introduction = () => {
+const Introduction = (props) => {
     const [introPosition, setIntroPosition] = useState(1);
     const bottomEl = useRef(null);
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+        bottomEl?.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [introPosition]);
 
     const showNextIntroSeciton = () => {
-        setIntroPosition(introPosition+1);
-        bottomEl?.current?.scrollIntoView({ behavior: 'smooth' });
+        setIntroPosition(introPosition+1); 
     }
 
     const introData = [
@@ -73,43 +73,63 @@ const Introduction = () => {
         }, 
         {
             punk:'/static/mary.gif',
-            text: 'Lets get you started.'
+            text: 'LOOK. We even get experience every time we play games, which can be found in the Scores tab.'
+        }, 
+        {
+            punk:'/static/mary.gif',
+            text: 'I am excited to get started.'
+        },
+        {
+            punk:'/static/mary.gif',
+            text: 'Oh and this last tab is your account information.'
+        },
+        {
+            punk:'/static/mary.gif',
+            text: 'LETS GET GOING !'
         },
     ]
 
     const showFakeNavBar = () => {
-        //if (introPosition === 17) return <Redirect to='/games' />
         if (introPosition > 11) {
             return (
                 <div className='fakeNavBar'>
-                    {introPosition >= 11 ? <div className='fakeNavBarIcon'></div>: ''}
-                    {introPosition >= 14 ? <div className='fakeNavBarIcon fakeNavBarIcon2'></div>: ''}
-                    {introPosition >= 15 ? <div className='fakeNavBarIcon fakeNavBarIcon3'></div>: ''}
-                    {introPosition >= 16 ? <div className='fakeNavBarIcon fakeNavBarIcon4'></div>: ''}
+                    {introPosition >= 11 ? <div className='fakeNavBarIcon fakeNavBarIcon1'></div>: ''}
+                    {introPosition >= 13 ? <div className='fakeNavBarIcon fakeNavBarIcon2'></div>: ''}
+                    {introPosition >= 16 ? <div className='fakeNavBarIcon fakeNavBarIcon3'></div>: ''}
+                    {introPosition >= 18 ? <div className='fakeNavBarIcon fakeNavBarIcon4'></div>: ''}
                 </div>
-            ) 
+            )
         }
     }
-    
-    return (
-        <>
+
+    const showNeverShowText = () => {
+        return (
+            introPosition >= 19 ? 
+                <div className='neverShowContainer'>
+                    <div className='neverShowAgainText' onClick={()=>props.neverShowIntro()}>Never Show Again</div>
+                    <div className='neverShowAgainText' onClick={()=>props.hideIntroForNow()}>Take me to games</div>
+                </div>
+            : ''
+        )
+    }
+
+    return ( 
+        <div className='introductionContainer' onClick={() => showNextIntroSeciton()}>
+            {
+                introData.map((introItem, i) => {
+                    return (
+                        introPosition >= i+1 ?
+                            <div key={i} className='introPosition' ref={bottomEl}>
+                                <Punk punk={introItem.punk} />
+                                <div className='introText'>{introItem.text}</div>
+                            </div>
+                        : ''
+                    )
+                })
+            }
             {showFakeNavBar()}
-           
-            <div className='introductionContainer' onClick={() => showNextIntroSeciton()}>
-                {
-                    introData.map((introItem, i) => {
-                        return (
-                            introPosition >= i+1 ?
-                                <div key={i} className='introPosition' ref={bottomEl}>
-                                    <Punk punk={introItem.punk} />
-                                    <div className='introText'>{introItem.text}</div>
-                                </div>
-                            : ''
-                        )
-                    })
-                } 
-            </div>
-        </>
+            {showNeverShowText()} 
+        </div> 
     );
 };
 

@@ -38,7 +38,7 @@ const LoginForm = () => {
  
     if (user) {
         if(Auth.loggedIn())
-            return <Redirect to='/introduction' user={Auth.getUser()} />
+            return <Redirect to='/games' user={Auth.getUser()} />
     }
     
     return (
