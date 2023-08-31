@@ -37,7 +37,7 @@ const LoginForm = () => {
         });
     };
  
- 
+
     if (user) {
         if(Auth.loggedIn())
             return showIntro ? <Redirect to='/introduction' /> : <Redirect to='/games' user={Auth.getUser()} />
