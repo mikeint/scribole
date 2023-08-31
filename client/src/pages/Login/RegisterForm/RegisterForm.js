@@ -1,38 +1,35 @@
-import React, { Component } from 'react';  
+import React, { useState } from 'react';  
 import axios from 'axios';
 import AuthFunctions from '../../../AuthFunctions';
 import { Redirect } from 'react-router-dom';
 
 import './RegisterForm.scss';
 
-class RegisterForm extends Component {
-  	constructor() {
-		super();
-		this.state = {
-			name: '',
-			email: '',
-			password: '',
-			password2: '', 
-			errorList: '',
-			user: '',
-		};
-		this.Auth = new AuthFunctions();
-		this.onChange = this.onChange.bind(this);
-		this.register = this.register.bind(this);
-	}
+const RegisterForm = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [password2, setPassword2] = useState('');
+    const [errorList, setErrorList] = useState('');
+    const [user, setUser] = useState('');
+    const [token, setToken] = useState('');
 
-	onChange(e) {
-		this.setState({ [e.target.name]: e.target.value });
-	}
+	const Auth = new AuthFunctions();
+ 
+    const setNameState = (e)=> setName(e.target.value)
+    const setEmailState = (e)=> setEmail(e.target.value)
+    const setPasswordState = (e)=> setPassword(e.target.value)
+    const setPassword2State = (e)=> setPassword2(e.target.value)
+	
 
-	register(e) {
+	const register = (e) => {
 		e.preventDefault();
 
 		const newUser = {
-			name: this.state.name,
-			email: this.state.email,
-			password: this.state.password,
-			password2: this.state.password2
+			name: name,
+			email: email,
+			password: password,
+			password2: password2
 		};
 		console.log(newUser)
 
@@ -40,48 +37,40 @@ class RegisterForm extends Component {
 		.then((res)=>{
 			axios.post('https://ir3me5vi29.execute-api.ca-central-1.amazonaws.com/api/users/login', {
 				email: res.data.email,
-				password: this.state.password
+				password: password
 			}).then((res)=>{
-				this.Auth.clearToken();
+				Auth.clearToken();
 				let token = res.data.token.replace(/Bearer/g, '').trim();
 
-				this.Auth.setToken(token, ()=>{
-					this.setState({
-						token: token
-					})
+				Auth.setToken(token, ()=>{
+					setToken(token)
 				});
-				this.Auth.setUser(res.data.user, ()=> {
-					this.setState({
-						user: res.data.user
-					})
+				Auth.setUser(res.data.user, ()=> {
+					setUser(res.data.user)
 				});
 			})
 		})
 		.catch(errors => 
-			this.showErrors(errors)
+			showErrors(errors)
 		);  
 	}
 
-  showErrors = (errors) => {
- 
-	var tmpErrList = [];
-	var errArr = errors.response.data;
-	for (var key in errArr) {
-		if (errArr.hasOwnProperty(key)) {  
-			tmpErrList.push(errArr[key]);
+  	const showErrors = (errors) => {
+	
+		var tmpErrList = [];
+		var errArr = errors.response.data;
+		for (var key in errArr) {
+			if (errArr.hasOwnProperty(key)) {  
+				tmpErrList.push(errArr[key]);
+			}
 		}
-	} 
-	this.setState({ errorList: tmpErrList });
-
-}
-
-  render() {
-    const { name, email, password, password2 } = this.state;
-
-	if(this.Auth.loggedIn()){
-        if (this.state.user)
-            return <Redirect to='/games' user={this.Auth.getUser()}/>
-	} 
+		setErrorList(tmpErrList);
+	}
+ 
+	if (user) {
+        if(Auth.loggedIn())
+            return <Redirect to='/introduction' user={Auth.getUser()} />
+    }
 	
     return (
        
@@ -90,22 +79,22 @@ class RegisterForm extends Component {
 			{/* <form onSubmit={this.register}> */}
 
 				<div className="loginInput"> 
-					<input type="text" className="formControl" placeholder="username" name="name" value={name} onChange={this.onChange} required />
+					<input type="text" className="formControl" placeholder="username" name="name" value={name} onChange={setNameState} required />
 				</div>
 				<div className="loginInput"> 
-					<input type="email" className="formControl" placeholder="email" name="email" value={email} onChange={this.onChange} required />
+					<input type="email" className="formControl" placeholder="email" name="email" value={email} onChange={setEmailState} required />
 				</div>
 				<div className="loginInput">
-					<input type="password" placeholder="password" name="password" value={password} onChange={this.onChange} required />
+					<input type="password" placeholder="password" name="password" value={password} onChange={setPasswordState} required />
 				</div>
 				<div className="loginInput">
-					<input type="password" placeholder="confirm password" name="password2" value={password2} onChange={this.onChange} required />
+					<input type="password" placeholder="confirm password" name="password2" value={password2} onChange={setPassword2State} required />
 				</div>
 				<div className="errorsList">
 					{
-						this.state.errorList ?
+						errorList ?
 							<ul>
-								{this.state.errorList.map((item, i) => {
+								{errorList.map((item, i) => {
 									return (<li key={i} className="errorItem">{item}</li>);
 								})}
 							</ul>
@@ -114,11 +103,10 @@ class RegisterForm extends Component {
 					}
 				</div>
  
-				<input onClick={this.register} type="submit" className="loginBtn" value="Register" />
+				<input onClick={register} type="submit" className="loginBtn" value="Register" />
 			{/* </form> */}
 		</div> 
     );
-  }
 }
 
 export default RegisterForm;

@@ -23,7 +23,6 @@ const Scores = () => {
             setMaxExp((playerLevel*100));
             setExpPercentage((currentExp / maxExp) * 100);
         }
-        
     })
 
     return (

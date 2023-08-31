@@ -6,11 +6,13 @@ import { Redirect } from 'react-router-dom';
 import './LoginForm.scss';
 
 const LoginForm = () => {
+	const [showIntro, setShowIntro] = useState(JSON.parse(localStorage.getItem('showIntro'))??true);
+
     const [user, setUser] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
- 
+
     const Auth = new AuthFunctions(); 
 
     const setEmailState = (e)=> setEmail(e.target.value)
@@ -38,7 +40,7 @@ const LoginForm = () => {
  
     if (user) {
         if(Auth.loggedIn())
-            return <Redirect to='/games' user={Auth.getUser()} />
+            return showIntro ? <Redirect to='/introduction' /> : <Redirect to='/games' user={Auth.getUser()} />
     }
     
     return (

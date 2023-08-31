@@ -9,6 +9,7 @@ dynamoose.aws.ddb.set(ddb);
 
 const bodyParser = require('body-parser');
 const users = require('./routes/api/users');
+const wordGroups = require('./routes/api/wordGroups');
 //const testAPI = require('./routes/api/testAPI'); 
 const passport = require('passport'); 
 const cors = require('cors');
@@ -23,8 +24,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 app.use(bodyParser.json())
-app.use(methodOverride('_method')); 
-
+app.use(methodOverride('_method'));
 
 // connect to mongoDB through mongoose
 // const db = require('./config/keys').mongoURI;
@@ -45,7 +45,7 @@ app.get('/', (req, res) => res.send("Hello World"));
 
 // USE routes
 app.use('/api/users', users);
-//app.use('/api/testAPI', testAPI);
+app.use('/api/wordGroups', wordGroups);
 
 const port = process.env.PORT || 5000;
 

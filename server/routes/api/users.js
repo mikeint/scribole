@@ -11,9 +11,8 @@ const User = require('../../models/User')
 //load input validation
 const validateRegisterInput = require('../../validation/register'); 
 const validateLoginInput = require('../../validation/login');
-
-
-// @route       GET api/user/login
+ 
+// @route       POST api/user/login
 // @desc        Login user route
 // @access      Public
 router.post('/login', (req, res) => {

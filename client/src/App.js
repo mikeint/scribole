@@ -13,8 +13,10 @@ import Game6 from './pages/Games/Game6/Game';
 import WordGroups from './pages/WordGroups/WordGroups';
 import Scores from './pages/Scores/Scores';
 import Account from './pages/Account/Account';
+import Introduction from './pages/Introduction/Introduction';
 import PrivateRoute from './PrivateRoute';
 import AuthFunctions from './AuthFunctions';
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 const App = () => {
     const [user, setUser] = useState('');
@@ -26,8 +28,11 @@ const App = () => {
         setToken(Auth.getToken() || "")
     }, []);
 
+    
     return (
         <HashRouter>
+
+            {Auth.loggedIn() ? <Redirect to="games" /> : ''}
             <Route exact path="/" render={ () => (<Login />) } />
             <Route exact path='/login' render={ () => (<Login />) } />
 
@@ -47,6 +52,7 @@ const App = () => {
             <PrivateRoute exact path="/wordGroups" component={WordGroups} user={user} token={token}/>
             <PrivateRoute exact path="/scores" component={Scores} user={user} token={token}/>
             <PrivateRoute exact path="/account" component={Account} user={user} token={token}/>
+            <PrivateRoute exact path="/introduction" component={Introduction} user={user} token={token}/>
 
             <PrivateRoute exact path="/game1" component={Game1} user={user} token={token}/>
             <PrivateRoute exact path="/game2" component={Game2} user={user} token={token}/>
